@@ -1,0 +1,20 @@
+* {
+    font-family: Inziu Iosevka Slab CL, sans-serif !important;
+}
+
+.jumbotron-fluid {
+    background-color: #f7f7f9;
+}
+
+.card-title {
+    margin-bottom: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.card-img {
+    height: 200px;
+    width: 100%;
+    display: block;
+}

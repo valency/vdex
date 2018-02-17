@@ -1,0 +1,39 @@
+<html>
+<head>
+    {% include "lib.html" %}
+    <title>Movies</title>
+</head>
+<body>
+{% include "header.html" %}
+<div class="jumbotron-fluid">
+    <p class="lead">
+        {% for tag in tags %}
+            <a href="./?tag={{ tag.id }}" class="btn btn-link">{{ tag.name }}</a>
+        {% endfor %}
+    </p>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        {% for movie in movies %}
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="card mb-3">
+                    <h3 class="card-header"><a href="./{{ movie.id }}/" target="_blank">{{ movie.id }}</a></h3>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ movie.name }}</h5>
+                    </div>
+                    <a href="./{{ movie.id }}/" target="_blank" class="card-link"><img class="card-img" src="/img/cover/00cbeb2b4a8f09f77b2d39c6c363927b.jpeg"/></a>
+                    <div class="card-body">
+                        <p class="card-text">
+                            {% for tag in movie.tags.all %}
+                                <a href="./?tag={{ tag.id }}" class="btn btn-link">{{ tag.name }}</a>
+                            {% endfor %}
+                        </p>
+                    </div>
+                    <div class="card-footer text-muted">{{ movie.t }}</div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>
